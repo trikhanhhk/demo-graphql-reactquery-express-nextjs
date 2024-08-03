@@ -1,0 +1,14 @@
+version: '3'
+
+services: 
+  dbMongo:
+    container_name: db
+    hostname: db
+    image: mongo:8.0.0-rc13-jammy
+    ports:
+      - "27017:27017"
+    volumes:
+      - 'db_data:/data/db'
+volumes:
+  db_data:
+    driver: local
