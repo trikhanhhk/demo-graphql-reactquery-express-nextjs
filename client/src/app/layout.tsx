@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Sidebar />
         <Header />
-        {children}
+        <div className="left-64 relative p-5">{children}</div>
         <Footer />
       </body>
     </html>
