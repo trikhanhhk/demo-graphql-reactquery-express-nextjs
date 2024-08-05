@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/layouts/Sidebar";
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import QueryProvider from "@/context/QueryProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,12 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Sidebar />
-        <Header />
-        <div className="left-64 relative p-5">{children}</div>
-        <Footer />
-      </body>
+      <QueryProvider>
+        <body className={inter.className}>
+          <Sidebar />
+          <Header />
+          <div className="left-64 relative p-5">{children}</div>
+          <Footer />
+        </body>
+      </QueryProvider>
     </html>
   );
 }

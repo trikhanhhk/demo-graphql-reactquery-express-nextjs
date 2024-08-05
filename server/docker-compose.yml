@@ -2,8 +2,8 @@ version: '3'
 
 services: 
   dbMongo:
-    container_name: db
-    hostname: db
+    container_name: dbMongo
+    hostname: dbMongo
     image: mongo:8.0.0-rc13-jammy
     ports:
       - "27017:27017"
